@@ -20,7 +20,7 @@ Unmerged cells are filled by value of original merged cells.
 
 
 def usage():
-    print(__doc__)f
+    print(__doc__)
     exit(-1)
     
 #unmerge_excel(path): For unmerge excel and save it.
@@ -50,6 +50,10 @@ def unmerge_excel(path):
                     assert rd_sheet.cell(row = rowx, column = colx).value == cell_value, "Error at %rowx, %colx with %cell_value"
     (origin_file, ext) = os.path.splitext(path)
 
-    unmerge_excel_file = 'unmerged.xlsx'
+    unmerge_excel_file = "unmerged.xlsx"
     book.save(unmerge_excel_file)
 
+
+if __name__ == "__main__":
+    path = ""
+    unmerge_excel()
