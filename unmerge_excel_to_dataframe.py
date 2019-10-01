@@ -35,6 +35,7 @@ def unmerge_excel_to_df_dict(path):
     
     for sheet_name in book.sheetnames:
         df_dict.update( {sheet_name :unmerge_ws_to_df( book, sheet_name) } )
+    print(df_dict)
     return df_dict
 
 
@@ -61,5 +62,6 @@ def unmerge_ws_to_df(book,sheetnames):
 
 
 if __name__ == "__main__":
-    path == ""
+    current_dir = os.getcwd()
+    path = os.path.join(current_dir, 'test_merge-file.xlsx')
     unmerge_excel_to_df_dict(path)

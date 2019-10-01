@@ -55,5 +55,6 @@ def unmerge_excel(path):
 
 
 if __name__ == "__main__":
-    path = ""
-    unmerge_excel()
+    current_dir = os.getcwd()
+    path = os.path.join(current_dir, 'test_merge-file.xlsx')
+    unmerge_excel(path)
