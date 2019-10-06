@@ -18,4 +18,7 @@ Function:
 Unmerged cells are filled by value of original merged cells.
 
 
-
+## Set Up
+- `virtualenv venv --python=python3`
+- `. venv/bin/activate`
+- `pip install -r requirements.txt`

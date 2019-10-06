@@ -20,7 +20,7 @@ Unmerged cells are filled by value of original merged cells.
 
 
 def usage():
-    print(__doc__)f
+    print(__doc__)
     exit(-1)
     
 #unmerge_excel_to_df_dict(path): For unmerge excel into dict of dataframe.
@@ -35,6 +35,7 @@ def unmerge_excel_to_df_dict(path):
     
     for sheet_name in book.sheetnames:
         df_dict.update( {sheet_name :unmerge_ws_to_df( book, sheet_name) } )
+    print(df_dict)
     return df_dict
 
 
@@ -58,4 +59,9 @@ def unmerge_ws_to_df(book,sheetnames):
             for colx in range(min_col, max_col+1):
                 data_df.loc[rowx-1,colx-1] = cell_value       
     return data_df
- 
+
+
+if __name__ == "__main__":
+    current_dir = os.getcwd()
+    path = os.path.join(current_dir, 'test_merge-file.xlsx')
+    unmerge_excel_to_df_dict(path)
